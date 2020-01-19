@@ -1,11 +1,12 @@
 <template>
   <div class="container">
-    <h1>Latest Posts</h1>
+    <h1>Compliment collector</h1>
+    <p>Verzamel hier complimenten en andere mooie momenten</p>
 
     <!-- Create post here -->
 
 <div class="create-post">
-  <label for="creat-post">Say Something</label>
+  <label for="creat-post">Wat heb je meegemaakt?</label><br>
   <input type="text" id="create-post" v-model="text" placeholder="Create a post" width="200">
   <button v-on:click="createPost">Post!</button>
 </div>
@@ -13,7 +14,7 @@
     <hr>
     <p class="error" v-if="error">{{ error }}</p>
     <div class="posts-container">
-      <div class="post" 
+      <div class="post"
         v-for="(post, index) in posts"
         v-bind:item="post"
         v-bind:index="index"
@@ -46,7 +47,7 @@ export default {
     } catch(err) {
       this.error =  err.message
     }
-  }, 
+  },
   methods: {
     async createPost() {
       await PostService.insertPost(this.text);
@@ -56,7 +57,7 @@ export default {
     async deletePost(id) {
       await PostService.deletePost(id);
       this.posts = await PostService.getPosts();
-    } 
+    }
   }
 }
 </script>
@@ -81,7 +82,7 @@ div.post {
   background-color: #bcffb8;
   padding: 10px 10px 30px 10px;
   margin-bottom: 15px;
-  
+
 }
 
 div.created-at {

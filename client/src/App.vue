@@ -1,28 +1,47 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent />
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://d15omoko64skxi.cloudfront.net/wp-content/uploads/2016/05/cc-site-icon-40x40.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+
+      </div>
+
+      <h1>Compliment Collector</h1>
+      <v-spacer></v-spacer>
+
+
+    </v-app-bar>
+
+    <v-content>
+      <HelloWorld/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import PostComponent from './components/PostComponent.vue'
+import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'app',
-  components: {
-    PostComponent
-  }
-}
-</script>
+  name: 'App',
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
