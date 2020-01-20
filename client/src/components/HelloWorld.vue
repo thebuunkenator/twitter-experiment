@@ -13,7 +13,7 @@
             <v-row>
               <v-text-field
                 id="create=post"
-                label="Compliment of moment:"
+                label="Compliment of memorable moment:"
 
                 v-model="text"
                 >
@@ -30,7 +30,7 @@
           </v-container>
         </v-form>
 
-    <hr>
+
     <p class="error" v-if="error">{{ error }}</p>
 
     <v-card
